@@ -11,16 +11,3 @@ const solution = (s, skip, index) => {
         return [...a,String.fromCharCode(numList[numList.indexOf(c)+index])]
     },[]).join('')
 }
-// const solution = (s, skip, index) => {
-//   const sArr = [...s].map(v => v.charCodeAt());
-//   const skipArr = [...skip].map(v => v.charCodeAt());
-//   const numList = Array.from(Array(26), (_, i) => i + 97).filter(v => !skipArr.includes(v));
-
-//   return sArr.reduce((a, c, i) => {
-//     if (skipArr.includes(c)) {
-//       return [...a, s[i]];
-//     }
-//     const charCode = numList[(numList.indexOf(c) + index) % numList.length];
-//     return [...a, String.fromCharCode(charCode)];
-//   }, []).join('');
-// };
