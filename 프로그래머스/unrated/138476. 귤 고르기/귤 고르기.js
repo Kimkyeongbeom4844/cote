@@ -7,18 +7,14 @@ const solution = (k, tangerine) => {
     // console.log(map);
     const arr = [...map].sort((a,b)=>b[1]-a[1]);
     // console.log(arr);
-    let stack = 0;
-    let count = 0;
+    let sum = 0;
+    let kind = 0;
     for(let i=0; i<arr.length; i++){
-        if(stack+arr[i][1] < k){
-            stack += arr[i][1];
-            count ++;
+        if(sum+arr[i][1] < k){
+            sum += arr[i][1];
+            kind++;
             continue;
         }
-        else if(stack+arr[i][1] >= k){
-            count++;
-            break;
-        }
+        return ++kind;
     }
-    return count;
 }
