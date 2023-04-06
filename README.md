@@ -13,3 +13,6 @@
   ![image](https://user-images.githubusercontent.com/82068552/229716701-6bb1d163-16e2-4f7b-8b47-557be0d2009c.png)
   
 ### 2단계 도전중
+ - 힘든문제
+
+   튜플 - JSON.parse() 및 정규표현식으로 해결
