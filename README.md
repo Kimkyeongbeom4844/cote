@@ -6,13 +6,13 @@
 ![image](https://user-images.githubusercontent.com/82068552/229720708-6f1ffb20-9fa2-4d52-9238-8382166a29f8.png)
  - 힘든문제
 
-  소수찾기 - 시간초과(에라토스테네스의 체)
+   소수찾기 - 시간초과(에라토스테네스의 체)
   
-  실패율 - 부동소수점
+   실패율 - 부동소수점
   
   ![image](https://user-images.githubusercontent.com/82068552/229716701-6bb1d163-16e2-4f7b-8b47-557be0d2009c.png)
   
 ### 2단계 도전중
  - 힘든문제
 
-   튜플 - 시간초과로 인해 JSON.parse() 및 정규표현식으로 해결
+    튜플 - 시간초과로 인해 JSON.parse() 및 정규표현식으로 해결
