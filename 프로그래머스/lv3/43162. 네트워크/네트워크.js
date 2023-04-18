@@ -8,16 +8,11 @@ const solution = (n, computers) => {
             }
             if(computers[i][j] === 1){
                 arr[i].add(j);
-                // arr[j] = arr[i]
                 const sumArr = [];
                 for(let k=0; k<i; k++){
-                    if(arr[k] === arr[j]){
-                        sumArr.push(k);
-                    }
+                    if(arr[k] === arr[j]) sumArr.push(k);
                 }
-                for(let k of sumArr){
-                    arr[k] = arr[i];
-                }
+                for(let k of sumArr) arr[k] = arr[i];
             }
         }
     }
