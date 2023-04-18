@@ -26,6 +26,7 @@ const solution = (fees, records) => {
         }
     }
     // console.log(map);
+    // console.log(result)
     return [...result].sort((a,b)=>a[0]-b[0]).reduce((a,c)=>{
         if(c[1] <= fees[0]) return [...a,fees[1]];
         else {
