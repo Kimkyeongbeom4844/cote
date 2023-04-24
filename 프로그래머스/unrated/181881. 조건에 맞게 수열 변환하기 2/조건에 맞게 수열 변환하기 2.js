@@ -1,7 +1,5 @@
 const solution = (arr) => {
     const 함수 = (num) => {
-        // if(num>=50 && num%2 === 0)
-        // if(num<50 && num%2 === 1)
         let count = 0
         while(num>=50 && num%2 === 0 || num<50 && num%2 === 1){
             count++;
@@ -16,4 +14,5 @@ const solution = (arr) => {
         return count
     }
     return arr.map(v=>함수(v)).sort((a,b)=>b-a)[0]
+    // return Math.max(...arr.map(v=>함수(v)))
 }
