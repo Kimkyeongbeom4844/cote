@@ -13,16 +13,11 @@ const solution = (m, n, board) => {
         for(let i=0; i<m; i++){
             for(let j=0; j<n-1; j++){
                 if(arr[i][j] === arr[i][j+1]){
-                    if(arr[i+1]?.[j] === null){
-                        let cloneI = i;
-                        
-                    } else {
-                        if(arr[i+1]?.[j] === arr[i][j] && arr[i+1]?.[j+1] === arr[i][j]){
-                            tempArr[i][j] = true;
-                            tempArr[i][j+1] = true;
-                            tempArr[i+1][j] = true;
-                            tempArr[i+1][j+1] = true;
-                        }
+                    if(arr[i+1]?.[j] === arr[i][j] && arr[i+1]?.[j+1] === arr[i][j]){
+                        tempArr[i][j] = true;
+                        tempArr[i][j+1] = true;
+                        tempArr[i+1][j] = true;
+                        tempArr[i+1][j+1] = true;
                     }
                 }
             }
