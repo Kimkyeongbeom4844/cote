@@ -28,6 +28,7 @@ const solution = (m, n, board) => {
                 if(tempArr[i][j]) arr[i][j] = null;
             }
         }
+        if(beforeArr === JSON.stringify(arr)) break;
         // console.log(arr);
         for(let i=m-1; i>=0; i--){
             for(let j=n-1; j>=0; j--){
@@ -46,7 +47,6 @@ const solution = (m, n, board) => {
                 }
             }
         }
-        if(beforeArr === JSON.stringify(arr)) break;
     }
     let result = 0;
     for(let i=0; i<m; i++){
