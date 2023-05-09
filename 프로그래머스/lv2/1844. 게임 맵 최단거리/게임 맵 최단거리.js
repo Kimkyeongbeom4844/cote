@@ -9,7 +9,7 @@ const solution = (maps) => {
         const len = queue.length;
         for (let i = 0; i < len; i++) {
           const [lat,lon] = queue.shift();
-          // maps[lat][lon] = 0;
+          maps[lat][lon] = 0;
           for (const [x, y] of directions) {
                 const nextX = lat+x;
                 const nextY = lon+y;
