@@ -3,54 +3,23 @@ const solution = (maps) => {
     let queue = [[0,0]];
     let count = 1;
     const [goalLat,goalLon] = [maps.length-1,maps[0].length-1];
-    const n = maps.length;
-    const m = maps[0].length;
     const directions = [[0, 1], [1, 0], [0, -1], [-1, 0]];
-    // while(queue.length){
-    //     count++;
-    //     const len = queue.length;
-    //     for(let i=0; i<len; i++){
-    //         const [lat,lon] = queue.shift();
-    //         maps[lat][lon] = 0;
-    //         if(maps[lat+1]?.[lon]){
-    //             if(lat+1 === goalLat && lon === goalLon) return count;
-    //             queue.push([lat+1,lon]);
-    //         }
-    //         if(maps[lat]?.[lon+1]){
-    //             if(lat === goalLat && lon+1 === goalLon) return count;
-    //             queue.push([lat,lon+1]);
-    //         }
-    //         if(maps[lat-1]?.[lon]){
-    //             if(lat-1 === goalLat && lon === goalLon) return count;
-    //             queue.push([lat-1,lon]);
-    //         }
-    //         if(maps[lat]?.[lon-1]){
-    //             if(lat === goalLat && lon-1 === goalLon) return count;
-    //             queue.push([lat,lon-1]);
-    //         }
-    //     }
-    // }
-    while (queue.length > 0) {
+    while (queue.length) {
+        count++;
         const len = queue.length;
         for (let i = 0; i < len; i++) {
-          const [x, y] = queue.shift();
-          for (const [dx, dy] of directions) {
-            const nx = x + dx;
-            const ny = y + dy;
-            if (nx < 0 || nx >= n || ny < 0 || ny >= m) {
-              continue;
-            }
-            if (maps[nx][ny] === 0) {
-              continue;
-            }
-            if (nx === n - 1 && ny === m - 1) {
-              return count + 1;
-            }
-            maps[nx][ny] = 0;
-            queue.push([nx, ny]);
+          const [lat,lon] = queue.shift();
+          // maps[lat][lon] = 0;
+          for (const [x, y] of directions) {
+                const nextX = lat+x;
+                const nextY = lon+y;
+                if(maps[nextX]?.[nextY]){
+                    if(nextX === goalLat && nextY === goalLon) return count;
+                    maps[nextX][nextY] = 0;
+                    queue.push([nextX,nextY]);
+                }
           }
         }
-        count++;
     }
     return -1;
 }
@@ -79,3 +48,29 @@ const solution = (maps) => {
     // set.delete(-1);
     // if(set.size === 0) return -1;
     // return Math.min(...set);
+
+
+    // while(queue.length){
+    //     count++;
+    //     const len = queue.length;
+    //     for(let i=0; i<len; i++){
+    //         const [lat,lon] = queue.shift();
+    //         maps[lat][lon] = 0;
+    //         if(maps[lat+1]?.[lon]){
+    //             if(lat+1 === goalLat && lon === goalLon) return count;
+    //             queue.push([lat+1,lon]);
+    //         }
+    //         if(maps[lat]?.[lon+1]){
+    //             if(lat === goalLat && lon+1 === goalLon) return count;
+    //             queue.push([lat,lon+1]);
+    //         }
+    //         if(maps[lat-1]?.[lon]){
+    //             if(lat-1 === goalLat && lon === goalLon) return count;
+    //             queue.push([lat-1,lon]);
+    //         }
+    //         if(maps[lat]?.[lon-1]){
+    //             if(lat === goalLat && lon-1 === goalLon) return count;
+    //             queue.push([lat,lon-1]);
+    //         }
+    //     }
+    // }
