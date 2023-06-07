@@ -9,7 +9,7 @@ const solution = (A, B) => {
         } 
         else {
             sortB.shift();
-        } 
+        }
         sortA.pop();
     }
     return count;
